@@ -1,0 +1,21 @@
+● abel.service - ABEL mining
+     Loaded: loaded (/etc/systemd/system/abel.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2022-12-20 04:18:31 UTC; 2 days ago
+   Main PID: 795 (run.sh)
+      Tasks: 41 (limit: 9206)
+     Memory: 418.8M
+        CPU: 6h 45min 15.136s
+     CGroup: /system.slice/abel.service
+             ├─795 /bin/bash /home/s/ABEL/abelminer201/run.sh
+             └─948 ./abelminer -U -P stratums://9a39240f2ff752239bf6d42546b393eefb31ce12a15fc76e43c0cab9a3ec749e:hundred7@gpool-service-dior.abelian.info:27778
+
+Dec 22 11:13:34 TST01-001 run.sh[948]:  m 11:13:34 abelminer 54:54 A8517:R2678 496.11 Mh - cu0 41.50, cu1 41.50, cu2 41.51, cu3 41.50, cu4 41.50, cu5 40.86, cu6 41.50, cu7 40.87, cu8 41.50, cu9 41.50, cu10 40.86, cu11 41.50
+Dec 22 11:13:33 TST01-001 run.sh[948]:  i 11:13:33 abelminer **Accepted 218 ms. gpool-service-dior.abelian.info [3.142.215.102:27778]
+Dec 22 11:13:39 TST01-001 run.sh[948]:  m 11:13:39 abelminer 54:54 A8517:R2678 496.16 Mh - cu0 41.51, cu1 41.51, cu2 41.51, cu3 41.51, cu4 41.51, cu5 40.86, cu6 41.51, cu7 40.87, cu8 41.51, cu9 41.51, cu10 40.86, cu11 41.51
+Dec 22 11:13:44 TST01-001 run.sh[948]:  m 11:13:44 abelminer 54:54 A8517:R2678 496.15 Mh - cu0 41.51, cu1 41.51, cu2 41.51, cu3 41.50, cu4 41.51, cu5 40.86, cu6 41.51, cu7 40.87, cu8 41.50, cu9 41.51, cu10 40.86, cu11 41.50
+Dec 22 11:13:49 TST01-001 run.sh[948]:  m 11:13:49 abelminer 54:54 A8517:R2678 496.17 Mh - cu0 41.51, cu1 41.51, cu2 41.51, cu3 41.51, cu4 41.51, cu5 40.87, cu6 41.51, cu7 40.87, cu8 41.51, cu9 41.51, cu10 40.86, cu11 41.51
+Dec 22 11:13:52 TST01-001 run.sh[948]: cu 11:13:52 cuda-5   Job: 24dc82d1… Sol: 0x779050004f130d0d
+Dec 22 11:13:52 TST01-001 run.sh[948]:  i 11:13:52 abelminer **Accepted 218 ms. gpool-service-dior.abelian.info [3.142.215.102:27778]
+Dec 22 11:13:54 TST01-001 run.sh[948]:  m 11:13:54 abelminer 54:55 A8518:R2678 496.16 Mh - cu0 41.51, cu1 41.51, cu2 41.51, cu3 41.50, cu4 41.51, cu5 40.86, cu6 41.51, cu7 40.87, cu8 41.51, cu9 41.51, cu10 40.86, cu11 41.51
+Dec 22 11:13:59 TST01-001 run.sh[948]:  m 11:13:59 abelminer 54:55 A8518:R2678 496.15 Mh - cu0 41.51, cu1 41.51, cu2 41.51, cu3 41.51, cu4 41.51, cu5 40.86, cu6 41.51, cu7 40.87, cu8 41.50, cu9 41.51, cu10 40.86, cu11 41.51
+Dec 22 11:14:04 TST01-001 run.sh[948]:  m 11:14:04 abelminer 54:55 A8518:R2678 496.16 Mh - cu0 41.51, cu1 41.51, cu2 41.51, cu3 41.51, cu4 41.51, cu5 40.86, cu6 41.51, cu7 40.87, cu8 41.51, cu9 41.51, cu10 40.86, cu11 41.51
