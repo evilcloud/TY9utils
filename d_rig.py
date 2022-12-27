@@ -38,10 +38,11 @@ def parse_mining_line(line: str):
         rig_line[key] = d_sys.prettify(value, key)
     rig_line["hashrate"] = d_sys.prettify(rig_line["hashrate"], "hashrate")
     del rig_line["hashratio"]
-    cu_line = {
-        d_sys.prettify(d_sys.to_int(cu), "cu"): d_sys.prettify(hr, "hashrate")
-        for cu, hr in zip(line[13::2], line[14::2])
-    }
+    # cu_line = {
+    #     d_sys.prettify(d_sys.to_int(cu), "cu"): d_sys.prettify(hr, "hashrate")
+    #     for cu, hr in zip(line[13::2], line[14::2])
+    # }
+    cu_line = dict(zip(line[13::2], line[14::2]))
     return rig_line, cu_line
 
 
@@ -55,9 +56,14 @@ def get_rig_data() -> tuple:
     last_mint = get_last_mining(mining_data)
     parsed_line, parsed_cu = parse_mining_line(last_mint)
     rig |= parsed_line
-    for key, value in rig.items():
-        rig[key] = d_sys.prettify(value, key)
+    # for key, value in rig.items():
+    #     rig[key] = d_sys.prettify(value, key)
     return rig, parsed_cu
 
 
-print(get_rig_data())
+def main():
+    print(get_rig_data())
+
+
+if __name__ == "__main__":
+    main()

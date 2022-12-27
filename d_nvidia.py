@@ -54,6 +54,7 @@ def merge_lists_to_dict(keys: list[str], values: list[str]) -> dict:
     :param values: list of values
     :return: merged dict
     """
+
     return dict(zip(keys, values))
 
 
@@ -71,26 +72,28 @@ def get_gpus_data() -> dict:
         out_proc, err_proc = d_sys.open_file(SAMPLE_PROC_FILE).splitlines(), False
     if err_gpu or err_proc:
         print("Failed to get NVIDIA data")
+        return ({}, True)
     gpus = [merge_lists_to_dict(NVIDIA_GPU_USED, gpu.split(", ")) for gpu in out_gpu]
     procs = [
         merge_lists_to_dict(NVIDIA_PROC_USED, proc.split(", ")) for proc in out_proc
     ]
     ret = {}
-    for gpu in gpus:
-        ret[gpu["uuid"]] = gpu
+    # for gpu in gpus:
+    #     ret[gpu["uuid"]] = gpu
+    ret = {gpu["uuid"]: gpu for gpu in gpus}
     for proc in procs:
         ret[proc["gpu_uuid"]] |= proc
         del ret[proc["gpu_uuid"]]["gpu_uuid"]
-    for key, value in ret.items():
-        ret[key] = d_sys.prettify(value, key)
-    return ret
+    # for key, value in ret.items():
+    #     ret[key] = d_sys.prettify(value, key)
+    return (ret, False)
 
 
 # MAIN ####
 
 
 def main():
-    gpu_aggregate = get_gpus_data()
+    gpu_aggregate, _ = get_gpus_data()
 
     for gpu in gpu_aggregate:
         print(gpu_aggregate[gpu])
