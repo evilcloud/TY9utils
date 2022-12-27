@@ -3,7 +3,9 @@ import d_rig
 import d_nvidia
 from deta import Deta
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 DETA_KEY = os.environ["DETA_KEY"]
 
