@@ -1,0 +1,1 @@
+python3 db_deta.py 2> report.err
